@@ -26,6 +26,18 @@ See 'snap info docker' for additional versions.
 2. Убедитесь что у вас УСТАНОВЛЕН ```docker compose```(без тире) версии не менее v2.24.X, для это выполните команду ```docker compose version```  
 ###  **Своё решение к задачам оформите в вашем GitHub репозитории!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!**
 
+## Решение Задача 0
+
+```bash
+sudo yum install -y yum-utils
+sudo yum-config-manager --add-repo https://download.docker.com/linux/centos/docker-ce.repo
+sudo yum install -y docker-ce docker-ce-cli containerd.io
+sudo systemctl start docker
+sudo systemctl enable docker
+docker compose version
+```
+![image](https://github.com/user-attachments/assets/e90ba025-790e-4c78-ba0b-43dda053e0d6)
+
 ---
 
 ## Задача 1
