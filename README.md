@@ -222,7 +222,7 @@ yc container image list
 ```bash
 yc container image scan cr.yandex/crphlbn0nvu5j1v4u5qo/python-app:latest
 ```
-Ошибка
+Ошибка, не найден образ, но образ точно есть, несколько раз перезаливал его в реестр.
 
 ![image](https://github.com/user-attachments/assets/3eea8447-99c0-4993-b3e3-b4999975a93b)
 
