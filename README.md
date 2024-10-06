@@ -199,6 +199,17 @@ yc container registry configure-docker
 ```bash
 docker build -t cr.yandex/b1g3hhpc4sj7fmtmdccu/python-app:latest .
 ```
+![image](https://github.com/user-attachments/assets/597de0d5-4ca2-4f82-9a71-0c4deaf16693)
+
+```bash
+docker push cr.yandex/crpf8157tcdopoltmu02/python-app:latest
+```
+![image](https://github.com/user-attachments/assets/b1a255c9-3be9-4dea-9c5a-18e623792e4e)
+
+```bash
+yc container image scan cr.yandex/b1g3hhpc4sj7fmtmdccu/python-app:latest
+```
+
 
 ## Задача 3
 1. Изучите файл "proxy.yaml"
