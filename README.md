@@ -178,12 +178,18 @@ export TABLE_NAME='new_requests'
 
 ## Решение Задача 2 (*)
 
-Авторизация в Yandex Cloud
+Авторизация в Yandex Cloud (token https://oauth.yandex.ru/authorize?response_type=token&client_id=1a6990aa636648e9b2ef855fa7bec2fb)
 
 ```bash
 yc init
 ```
 ![image](https://github.com/user-attachments/assets/766c8120-0fa0-481e-b977-8d3e0913f3e7)
+
+
+```bash
+yc container registry create --name test
+```
+![image](https://github.com/user-attachments/assets/52234e85-ceaf-41da-adc7-e829699a526c)
 
 
 
