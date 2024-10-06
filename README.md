@@ -332,6 +332,21 @@ docker compose down
 
 ## Решение Задача 4
 
+ssh tenda@51.250.101.36
+
+```bash
+sudo apt update
+sudo apt install -y docker.io
+sudo systemctl start docker
+sudo systemctl enable docker
+sudo docker --version
+```
+
+![image](https://github.com/user-attachments/assets/0a844319-141b-4132-8693-762bf423fe3d)
+
+
+
+
 ## Задача 5 (*)
 1. Напишите и задеплойте на вашу облачную ВМ bash скрипт, который произведет резервное копирование БД mysql в директорию "/opt/backup" с помощью запуска в сети "backend" контейнера из образа ```schnitzler/mysqldump``` при помощи ```docker run ...``` команды. Подсказка: "документация образа."
 2. Протестируйте ручной запуск
