@@ -226,6 +226,9 @@ yc container image scan cr.yandex/crphlbn0nvu5j1v4u5qo/python-app:latest
 
 ![image](https://github.com/user-attachments/assets/3eea8447-99c0-4993-b3e3-b4999975a93b)
 
+Отсканировал через Web-интефейс
+
+![image](https://github.com/user-attachments/assets/78027827-ee7f-44b2-9403-cebd25436df8)
 
 
 ## Задача 3
