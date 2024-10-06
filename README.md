@@ -191,6 +191,11 @@ yc container registry create --name test
 ```
 ![image](https://github.com/user-attachments/assets/52234e85-ceaf-41da-adc7-e829699a526c)
 
+```bash
+yc container registry configure-docker
+```
+![image](https://github.com/user-attachments/assets/63ddda1f-8da7-45b1-94ba-a1a783051173)
+
 
 
 ## Задача 3
