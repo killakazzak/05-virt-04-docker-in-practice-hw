@@ -310,8 +310,11 @@ curl -L http://127.0.0.1:8090; echo
 docker exec -it b269cc57ffd2 mysql -u app -p
 ```
 
-![image](https://github.com/user-attachments/assets/378ee4be-2049-4e1e-b416-3e8e53956ba2)
+```sql
+SHOW DATABASES; USE virtd; SHOW TABLES; SELECT * FROM requests LIMIT 10;
+```
 
+![image](https://github.com/user-attachments/assets/63949ae9-2862-42c0-81e0-027028c1dc19)
 
 
 ## Задача 4
