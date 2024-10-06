@@ -164,6 +164,7 @@ export TABLE_NAME='new_requests'
 ```
 
 Проверка
+
 ![image](https://github.com/user-attachments/assets/6aa27fc7-9977-4fd2-91e3-626be7a5f38c)
 
 ---
