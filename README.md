@@ -52,6 +52,53 @@ docker compose version
 !!! В процессе последующего выполнения ДЗ НЕ изменяйте содержимое файлов в fork-репозитории! Ваша задача ДОБАВИТЬ 5 файлов: ```Dockerfile.python```, ```compose.yaml```, ```.gitignore```, ```.dockerignore```,```bash-скрипт```. Если вам понадобилось внести иные изменения в проект - вы что-то делаете неверно!
 
 ## Решение Задача 1
+
+```bash
+mkdir 05-virt-04-docker-in-practice-hw
+cd 05-virt-04-docker-in-practice-hw
+git clone https://github.com/netology-code/shvirtd-example-python.git
+```
+
+Создаем файл Dockerfile.python
+
+```bash
+cat > Dockerfile.python <<EOF
+# Используем базовый образ Python 3.9 slim
+FROM python:3.9-slim
+
+# Устанавливаем рабочую директорию
+WORKDIR /app
+
+# Копируем все файлы в рабочую директорию
+COPY . .
+
+# Устанавливаем зависимости
+RUN pip install --no-cache-dir -r requirements.txt
+
+# Указываем команду для запуска приложения
+CMD ["python", "main.py"]
+EOF
+```
+Создаем файл .dockerignore
+
+```bash
+cat > .dockerignore <<EOF
+__pycache__
+*.pyc
+*.pyo
+.git
+.gitignore
+EOF
+```
+
+```
+python3 -m venv venv
+source venv/bin/activate
+
+
+
+![image](https://github.com/user-attachments/assets/96e0ae92-9d21-48b4-8c8b-694be68040ec)
+
 ---
 
 ## Задача 2 (*)
