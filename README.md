@@ -206,9 +206,26 @@ docker push cr.yandex/crphlbn0nvu5j1v4u5qo/python-app:latest
 ```
 ![image](https://github.com/user-attachments/assets/b1a255c9-3be9-4dea-9c5a-18e623792e4e)
 
+
+При сканировании возникла проблема 
+
+Проверяем образы
+```
+yc container image list
+```
+![image](https://github.com/user-attachments/assets/2f1a5d04-a4b0-4b8b-af13-d790633972eb)
+
+![image](https://github.com/user-attachments/assets/9773c7b0-9ffa-4c5c-abff-e25c4034bdd2)
+
+Сканируем
+
 ```bash
 yc container image scan cr.yandex/crphlbn0nvu5j1v4u5qo/python-app:latest
 ```
+Ошибка
+
+![image](https://github.com/user-attachments/assets/3eea8447-99c0-4993-b3e3-b4999975a93b)
+
 
 
 ## Задача 3
