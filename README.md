@@ -178,6 +178,15 @@ export TABLE_NAME='new_requests'
 
 ## Решение Задача 2 (*)
 
+Авторизация в Yandex Cloud
+
+```bash
+yc init
+```
+![image](https://github.com/user-attachments/assets/766c8120-0fa0-481e-b977-8d3e0913f3e7)
+
+
+
 ## Задача 3
 1. Изучите файл "proxy.yaml"
 2. Создайте в репозитории с проектом файл ```compose.yaml```. С помощью директивы "include" подключите к нему файл "proxy.yaml".
