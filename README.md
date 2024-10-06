@@ -249,6 +249,70 @@ yc container image scan cr.yandex/crphlbn0nvu5j1v4u5qo/python-app:latest
 
 ## Решение Задача 3
 
+Файл compose.yaml
+
+```yaml
+version: '3.8'
+
+# Включаем файл proxy.yaml
+include:
+  - proxy.yaml
+
+services:
+  web:
+    build:
+      context: .
+      dockerfile: Dockerfile.python
+    # image: cr.yandex/crphlbn0nvu5j1v4u5qo/python-app:latest
+    restart: always
+    networks:
+      backend:
+        ipv4_address: 172.20.0.5
+    environment:
+      - DB_HOST=db
+      - DB_USER=${DB_USER}
+      - DB_PASSWORD=${DB_PASSWORD}
+      - DB_NAME=${DB_NAME}
+
+  db:
+    image: mysql:8
+    restart: always
+    networks:
+      backend:
+        ipv4_address: 172.20.0.10
+    environment:
+      - MYSQL_ROOT_PASSWORD=${MYSQL_ROOT_PASSWORD}
+      - MYSQL_DATABASE=${DB_NAME}
+      - MYSQL_USER=${DB_USER}
+      - MYSQL_PASSWORD=${DB_PASSWORD}
+
+networks:
+  backend:
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 172.20.0.0/24
+```
+
+```bash
+docker-compose up -d
+docker ps -a
+```
+![image](https://github.com/user-attachments/assets/acb33e02-e27c-44b9-a399-87a8ff7e7978)
+
+
+```bash
+curl -L http://127.0.0.1:8090
+```
+![image](https://github.com/user-attachments/assets/c8612567-39a5-4fa5-83c1-bef0c3f47f12)
+
+
+
+
+
+![image](https://github.com/user-attachments/assets/85b5716b-f976-4121-8353-a1ebf0ae237e)
+
+
 ## Задача 4
 1. Запустите в Yandex Cloud ВМ (вам хватит 2 Гб Ram).
 2. Подключитесь к Вм по ssh и установите docker.
