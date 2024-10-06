@@ -91,11 +91,14 @@ __pycache__
 EOF
 ```
 
-```
+```bash
 python3 -m venv venv
 source venv/bin/activate
-
-
+pip install -r requirements.txt
+docker run --name mysql-container -e MYSQL_ROOT_PASSWORD="YtReWq4321" -e MYSQL_DATABASE="virtd" -e MYSQL_USER="app" -e MYSQL_PASSWORD="QwErTy1234" -p 3306:3306 -d mysql:latest
+docker ps -a
+python main.py
+```
 
 ![image](https://github.com/user-attachments/assets/96e0ae92-9d21-48b4-8c8b-694be68040ec)
 
