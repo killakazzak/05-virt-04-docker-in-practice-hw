@@ -197,17 +197,17 @@ yc container registry configure-docker
 ![image](https://github.com/user-attachments/assets/63ddda1f-8da7-45b1-94ba-a1a783051173)
 
 ```bash
-docker build -t cr.yandex/b1g3hhpc4sj7fmtmdccu/python-app:latest .
+docker build -t cr.yandex/crphlbn0nvu5j1v4u5qo/python-app:latest .
 ```
 ![image](https://github.com/user-attachments/assets/597de0d5-4ca2-4f82-9a71-0c4deaf16693)
 
 ```bash
-docker push cr.yandex/crpf8157tcdopoltmu02/python-app:latest
+docker push cr.yandex/crphlbn0nvu5j1v4u5qo/python-app:latest
 ```
 ![image](https://github.com/user-attachments/assets/b1a255c9-3be9-4dea-9c5a-18e623792e4e)
 
 ```bash
-yc container image scan cr.yandex/b1g3hhpc4sj7fmtmdccu/python-app:latest
+yc container image scan cr.yandex/crphlbn0nvu5j1v4u5qo/python-app:latest
 ```
 
 
