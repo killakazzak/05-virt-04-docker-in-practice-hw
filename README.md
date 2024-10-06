@@ -316,6 +316,11 @@ SHOW DATABASES; USE virtd; SHOW TABLES; SELECT * FROM requests LIMIT 10;
 
 ![image](https://github.com/user-attachments/assets/63949ae9-2862-42c0-81e0-027028c1dc19)
 
+```bash
+docker compose down
+```
+![image](https://github.com/user-attachments/assets/9323f1f1-919b-486a-b323-154a03a22ac2)
+
 
 ## Задача 4
 1. Запустите в Yandex Cloud ВМ (вам хватит 2 Гб Ram).
