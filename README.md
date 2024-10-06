@@ -302,15 +302,16 @@ docker ps -a
 
 
 ```bash
-curl -L http://127.0.0.1:8090
+curl -L http://127.0.0.1:8090; echo
 ```
-![image](https://github.com/user-attachments/assets/c8612567-39a5-4fa5-83c1-bef0c3f47f12)
+![image](https://github.com/user-attachments/assets/c114555c-c07d-4ad1-94d1-bc81df8e3227)
 
+```bash
+docker exec -it b269cc57ffd2 mysql -u app -p
+```
 
+![image](https://github.com/user-attachments/assets/378ee4be-2049-4e1e-b416-3e8e53956ba2)
 
-
-
-![image](https://github.com/user-attachments/assets/85b5716b-f976-4121-8353-a1ebf0ae237e)
 
 
 ## Задача 4
