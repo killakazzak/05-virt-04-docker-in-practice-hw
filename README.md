@@ -406,6 +406,15 @@ docker ps
 
 ![image](https://github.com/user-attachments/assets/c8101420-8465-4804-b30e-2f46fbf09f69)
 
+```bash
+docker exec -it 370fc4e9084e mysql -u app -p
+```
+```sql
+SHOW DATABASES; USE virtd; SHOW TABLES; SELECT * FROM requests LIMIT 10;
+```
+
+![image](https://github.com/user-attachments/assets/c72629a8-712c-4f06-b509-f0948f1b261b)
+
 
 ## Задача 5 (*)
 1. Напишите и задеплойте на вашу облачную ВМ bash скрипт, который произведет резервное копирование БД mysql в директорию "/opt/backup" с помощью запуска в сети "backend" контейнера из образа ```schnitzler/mysqldump``` при помощи ```docker run ...``` команды. Подсказка: "документация образа."
