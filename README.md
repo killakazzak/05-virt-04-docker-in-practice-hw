@@ -379,7 +379,10 @@ echo "Проект запущен."
 ```
 ```bash
 chmod +x deploy.sh
+./deploy.sh
 ```
+![image](https://github.com/user-attachments/assets/af6d5660-b64d-4676-b695-f7c517304ad1)
+
 
 
 ![image](https://github.com/user-attachments/assets/bf6e7a42-c9bb-413f-a80b-b17fb3f17b92)
