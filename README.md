@@ -389,7 +389,22 @@ docker ps -a
 ![image](https://github.com/user-attachments/assets/bf6e7a42-c9bb-413f-a80b-b17fb3f17b92)
 
 
+На удаленном сервере
 
+```bash
+sudo usermod -aG docker $USER
+```
+На локальном сервере
+
+```bash
+docker context create my-remote --docker  "host=ssh://tenda@51.250.102.36"
+docker context ls
+docker context use my-remote
+docker ps
+```
+![image](https://github.com/user-attachments/assets/265f197c-808e-47d2-a3d8-24c64f9c8920)
+
+![image](https://github.com/user-attachments/assets/c8101420-8465-4804-b30e-2f46fbf09f69)
 
 
 ## Задача 5 (*)
