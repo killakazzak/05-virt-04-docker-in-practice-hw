@@ -416,6 +416,9 @@ SHOW DATABASES; USE virtd; SHOW TABLES; SELECT * FROM requests LIMIT 10;
 ![image](https://github.com/user-attachments/assets/c72629a8-712c-4f06-b509-f0948f1b261b)
 
 
+https://github.com/killakazzak/shvirtd-example-python/tree/main
+
+
 ## Задача 5 (*)
 1. Напишите и задеплойте на вашу облачную ВМ bash скрипт, который произведет резервное копирование БД mysql в директорию "/opt/backup" с помощью запуска в сети "backend" контейнера из образа ```schnitzler/mysqldump``` при помощи ```docker run ...``` команды. Подсказка: "документация образа."
 2. Протестируйте ручной запуск
