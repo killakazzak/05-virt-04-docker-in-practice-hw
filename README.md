@@ -332,17 +332,55 @@ docker compose down
 
 ## Решение Задача 4
 
-ssh tenda@51.250.101.36
+ssh tenda@51.250.102.36
 
 ```bash
-sudo apt update
-sudo apt install -y docker.io
+sudo yum install -y yum-utils git
+sudo yum-config-manager --add-repo https://download.docker.com/linux/centos/docker-ce.repo
+sudo yum install -y docker-ce docker-ce-cli containerd.io
 sudo systemctl start docker
 sudo systemctl enable docker
-sudo docker --version
 ```
 
-![image](https://github.com/user-attachments/assets/0a844319-141b-4132-8693-762bf423fe3d)
+bash-скрипт
+
+```bash
+#!/bin/bash
+
+# Проверка, что скрипт выполняется с правами суперпользователя
+if [ "$EUID" -ne 0 ]; then
+  echo "Пожалуйста, запустите скрипт с правами суперпользователя (sudo)."
+  exit 1
+fi
+
+
+# Переменные
+REPO_URL="https://github.com/killakazzak/shvirtd-example-python.git"
+TARGET_DIR="/opt/my_project/"
+
+# Скачивание репозитория
+if [ ! -d "$TARGET_DIR" ]; then
+  echo "Клонирование репозитория..."
+  git clone "$REPO_URL" "$TARGET_DIR"
+else
+  echo "Репозиторий уже существует в $TARGET_DIR. Обновление..."
+  cd "$TARGET_DIR" || exit
+  git pull origin main
+fi
+
+# Переход в каталог проекта
+cd "$TARGET_DIR" || exit
+
+# Запуск Docker Compose
+echo "Запуск проекта с помощью Docker Compose..."
+docker compose up -d
+
+echo "Проект запущен."
+```
+
+
+![image](https://github.com/user-attachments/assets/bf6e7a42-c9bb-413f-a80b-b17fb3f17b92)
+
 
 
 
