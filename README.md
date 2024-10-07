@@ -342,7 +342,7 @@ sudo systemctl start docker
 sudo systemctl enable docker
 ```
 
-bash-скрипт
+bash-скрипт deploy.sh
 
 ```bash
 #!/bin/bash
@@ -376,6 +376,9 @@ echo "Запуск проекта с помощью Docker Compose..."
 docker compose up -d
 
 echo "Проект запущен."
+```
+```bash
+chmod +x deploy.sh
 ```
 
 
