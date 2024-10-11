@@ -482,6 +482,14 @@ crontab -e
 
 ## Решение Задача 6
 
+```bash
+docker pull hashicorp/terraform:latest
+docker save -o terraform_latest.tar hashicorp/terraform:latest
+```
+![image](https://github.com/user-attachments/assets/89b38a0f-41ba-45f5-89e7-b275971a05b4)
+
+
+
 ## Задача 6.1
 Добейтесь аналогичного результата, используя docker cp.  
 Предоставьте скриншоты  действий .
