@@ -520,17 +520,50 @@ docker rm -f terraform_container
 
 ## Решение Задача 6.2 (**)
 
+
+Создаем временный контейнер
+
+```bash
+docker create --name temp_container hashicorp/terraform:latest
+```
+Копируем файл из временного контейнера на локальную машину:
+
+```bash
+docker cp temp_container:/bin/terraform ./terraform
+```
+Удаляем временный контейнер
+
+```bash
+docker rm temp_container
+```
+Затем создайте Dockerfile
+
 ```bash
 cat > Dockerfile <<EOF
-FROM hashicorp/terraform:latest
-COPY /bin/terraform /terraform
+FROM scratch
+COPY terraform /terraform
+CMD ["/terraform"]
 EOF
+```
+Собираем образ
+
+```bash
 docker build -t my_terraform_image .
+```
+Запускаем образ
+```bash
 docker run --name my_terraform_container my_terraform_image
+```
+Копируем файл из нового образа на локальную машину
+
+```bash
 docker cp my_terraform_container:/terraform ./terraform
+```
+Удаляем контейнер
+
+```bash
 docker rm my_terraform_container
 ```
-
 
 ## Задача 7 (***)
 Запустите ваше python-приложение с помощью runC, не используя docker или containerd.  
