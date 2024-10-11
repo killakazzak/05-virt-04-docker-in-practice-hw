@@ -427,6 +427,58 @@ https://github.com/killakazzak/shvirtd-example-python/tree/main
 
 ## Решение Задача 5 (*)
 
+Создаем файл окружения .env (скрываем логин/пароль)
+
+```bash
+mkdir /opt/backup
+cat <<EOL > /opt/backup/.env
+DB_USER="app"
+DB_PASSWORD="QwErTy1234"
+DB_NAME="virtd"
+EOL
+```
+
+Создаем скрипт backup
+
+```bash
+cat <<EOL > /root/backup.sh
+#!/bin/bash
+
+# Загрузка переменных окружения
+source /opt/backup/.env
+
+DB_HOST="db"
+BACKUP_DIR="/opt/backup"
+TIMESTAMP=$(date +"%Y%m%d%H%M")
+
+# Создание резервной копии
+docker run --rm \
+  --network my_project_backend \
+  -e MYSQL_ROOT_PASSWORD="$DB_PASSWORD" \
+  schnitzler/mysqldump \
+  -h "$DB_HOST" -u "$DB_USER" -p"$DB_PASSWORD" "$DB_NAME" > "$BACKUP_DIR/backup_$TIMESTAMP.sql"
+
+# Удаление резервных копий старше 7 дней
+find "$BACKUP_DIR" -type f -name "*.sql" -mtime +7 -exec rm {} \;
+EOL
+```
+Запускаем скрип backup
+
+```bash
+chmod +x backup.sh
+./backup.sh
+```
+```
+crontab -e
+* * * * * /opt/backup/backup.sh >> /opt/backup/backup.log 2>&1
+```
+
+
+
+
+
+
+
 ## Задача 6
 Скачайте docker образ ```hashicorp/terraform:latest``` и скопируйте бинарный файл ```/bin/terraform``` на свою локальную машину, используя dive и docker save.
 Предоставьте скриншоты  действий .
