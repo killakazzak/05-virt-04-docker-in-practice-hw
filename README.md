@@ -609,5 +609,8 @@ git clone https://github.com/opencontainers/runc
 cd runc
 make
 sudo make install
+runc --version
 ```
+![image](https://github.com/user-attachments/assets/54af2a1d-20d0-46dd-8b22-0ec8cb242503)
+
 
