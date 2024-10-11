@@ -591,7 +591,15 @@ docker rm -f my_terraform_container
 Установка runC (https://github.com/opencontainers/runc)
 
 ```bash
-yum install -y make gcc kernel-headers libseccomp-devel pkg-config git golang
+wget https://go.dev/dl/go1.23.2.linux-amd64.tar.gz
+rm -rf /usr/local/go && tar -C /usr/local -xzf go1.23.2.linux-amd64.tar.gz
+export PATH=$PATH:/usr/local/go/bin
+go version
+```
+![image](https://github.com/user-attachments/assets/04c01571-9bc3-4c90-96ea-bb54f73cc308)
+
+```bash
+yum install -y make gcc kernel-headers libseccomp-devel pkg-config git 
 ```
 
 ```bash
