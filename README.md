@@ -540,9 +540,10 @@ docker rm temp_container
 
 ```bash
 cat > Dockerfile <<EOF
-FROM scratch
-COPY terraform /terraform
-CMD ["/terraform"]
+FROM alpine:latest
+COPY terraform /usr/local/bin/terraform
+RUN chmod +x /usr/local/bin/terraform
+CMD ["terraform", "version"]
 EOF
 ```
 Собираем образ
@@ -552,12 +553,12 @@ docker build -t my_terraform_image .
 ```
 Запускаем образ
 ```bash
-docker run --name my_terraform_container my_terraform_image
+docker run --name my_terraform_container my_terraform_image tail -f /dev/null
 ```
 Копируем файл из нового образа на локальную машину
 
 ```bash
-docker cp my_terraform_container:/terraform ./terraform
+docker cp my_terraform_container://usr/local/bin/terraform ./terraform
 ```
 Удаляем контейнер
 
