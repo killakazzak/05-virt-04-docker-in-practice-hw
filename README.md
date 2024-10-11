@@ -498,14 +498,19 @@ docker save -o terraform_latest.tar hashicorp/terraform:latest
 
 ```bash
 docker pull hashicorp/terraform:latest
-docker run -it --name terraform_container hashicorp/terraform:latest /bin/sh
+docker run -d --name terraform_container hashicorp/terraform:latest tail -f /dev/null
 ```
-Далее, после запуска контейнера, необходимо выйти из него, не останавливая его, нажав Ctrl + P, затем Ctrl + Q. Это позволит контейнеру работать в фоновом режиме.
+![image](https://github.com/user-attachments/assets/73f0ae4e-951b-4927-8a5a-da92d25e9eed)
 
 ```bash
 docker cp terraform_container:/bin/terraform ./terraform
+```
+![image](https://github.com/user-attachments/assets/56b546c4-09b3-4190-bf6c-b8047d09f04b)
+
+```bash
 docker rm -f terraform_container
 ```
+![image](https://github.com/user-attachments/assets/8be3b368-5430-4847-9315-fb7ab0e99d05)
 
 
 ## Задача 6.2 (**)
