@@ -588,5 +588,8 @@ docker rm -f my_terraform_container
 Предоставьте скриншоты  действий .
 
 ## Решение Задача 7 (***)
-
+Установка runC
+```bash
+yum install -y make gcc kernel-headers libseccomp-devel pkg-config git
+```
 
