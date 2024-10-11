@@ -496,6 +496,18 @@ docker save -o terraform_latest.tar hashicorp/terraform:latest
 
 ## Решение Задача 6.1
 
+```bash
+docker pull hashicorp/terraform:latest
+docker run -it --name terraform_container hashicorp/terraform:latest /bin/sh
+```
+Далее, после запуска контейнера, необходимо выйти из него, не останавливая его, нажав Ctrl + P, затем Ctrl + Q. Это позволит контейнеру работать в фоновом режиме.
+
+```bash
+docker cp terraform_container:/bin/terraform ./terraform
+docker rm -f terraform_container
+```
+
+
 ## Задача 6.2 (**)
 Предложите способ извлечь файл из контейнера, используя только команду docker build и любой Dockerfile.  
 Предоставьте скриншоты  действий .
