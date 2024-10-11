@@ -526,17 +526,25 @@ docker rm -f terraform_container
 ```bash
 docker create --name temp_container hashicorp/terraform:latest
 ```
+![image](https://github.com/user-attachments/assets/00431cf0-b774-4b18-9e4b-d5454dddcbb4)
+
 Копируем файл из временного контейнера на локальную машину:
 
 ```bash
 docker cp temp_container:/bin/terraform ./terraform
 ```
+![image](https://github.com/user-attachments/assets/a15d57a2-9a50-4e8a-b4a1-071091b9d707)
+
+![image](https://github.com/user-attachments/assets/62b93927-3ad9-4f55-95a3-6fa017e4be6e)
+
 Удаляем временный контейнер
 
 ```bash
 docker rm temp_container
 ```
-Затем создайте Dockerfile
+![image](https://github.com/user-attachments/assets/93429c88-01d7-4e17-b7f2-99e6d1047021)
+
+Создаём Dockerfile
 
 ```bash
 cat > Dockerfile <<EOF
@@ -546,11 +554,15 @@ RUN chmod +x /usr/local/bin/terraform
 CMD ["terraform", "version"]
 EOF
 ```
+![image](https://github.com/user-attachments/assets/615e74fc-174e-4d70-8e71-9e4c8c6fd5af)
+
 Собираем образ
 
 ```bash
 docker build -t my_terraform_image .
 ```
+![image](https://github.com/user-attachments/assets/a6b19070-6065-4459-ba47-a19436c99117)
+
 Запускаем образ
 ```bash
 docker run --name my_terraform_container my_terraform_image tail -f /dev/null
@@ -558,13 +570,18 @@ docker run --name my_terraform_container my_terraform_image tail -f /dev/null
 Копируем файл из нового образа на локальную машину
 
 ```bash
-docker cp my_terraform_container://usr/local/bin/terraform ./terraform
+docker cp my_terraform_container://usr/local/bin/terraform ./terraform_new
 ```
+![image](https://github.com/user-attachments/assets/ac872952-3e17-48e0-b0e8-7c103aaa9ce0)
+
+![image](https://github.com/user-attachments/assets/ddbfa5fb-4548-4ab9-836b-cc1f9f810206)
+
 Удаляем контейнер
 
 ```bash
-docker rm my_terraform_container
+docker rm -f my_terraform_container
 ```
+![image](https://github.com/user-attachments/assets/6410d246-96d6-47ac-925c-ec039f453b2b)
 
 ## Задача 7 (***)
 Запустите ваше python-приложение с помощью runC, не используя docker или containerd.  
