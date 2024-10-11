@@ -520,6 +520,18 @@ docker rm -f terraform_container
 
 ## Решение Задача 6.2 (**)
 
+```bash
+cat > Dockerfile <<EOF
+FROM hashicorp/terraform:latest
+COPY /bin/terraform /terraform
+EOF
+docker build -t my_terraform_image .
+docker run --name my_terraform_container my_terraform_image
+docker cp my_terraform_container:/terraform ./terraform
+docker rm my_terraform_container
+```
+
+
 ## Задача 7 (***)
 Запустите ваше python-приложение с помощью runC, не используя docker или containerd.  
 Предоставьте скриншоты  действий .
