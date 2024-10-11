@@ -604,10 +604,9 @@ yum install -y make gcc kernel-headers libseccomp-devel pkg-config git
 
 ```bash
 # create a 'github.com/opencontainers' in your GOPATH/src
-cd github.com/opencontainers
+cd /root/go/pkg/mod/github.com/opencontainers/
 git clone https://github.com/opencontainers/runc
 cd runc
-
 make
 sudo make install
 ```
