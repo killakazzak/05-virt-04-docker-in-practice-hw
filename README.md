@@ -473,10 +473,7 @@ crontab -e
 * * * * * /opt/backup/backup.sh >> /opt/backup/backup.log 2>&1
 ```
 
-
-
-
-
+![image](https://github.com/user-attachments/assets/0371db98-bc5d-44ee-b5de-f3cb746edbbc)
 
 
 ## Задача 6
