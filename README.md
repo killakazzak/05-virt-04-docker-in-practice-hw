@@ -512,6 +512,7 @@ docker rm -f terraform_container
 ```
 ![image](https://github.com/user-attachments/assets/8be3b368-5430-4847-9315-fb7ab0e99d05)
 
+![image](https://github.com/user-attachments/assets/a2385b03-d0ea-492a-820d-4143c79c6195)
 
 ## Задача 6.2 (**)
 Предложите способ извлечь файл из контейнера, используя только команду docker build и любой Dockerfile.  
