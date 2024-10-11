@@ -591,7 +591,7 @@ docker rm -f my_terraform_container
 Установка runC (https://github.com/opencontainers/runc)
 
 ```bash
-yum install -y make gcc kernel-headers libseccomp-devel pkg-config git
+yum install -y make gcc kernel-headers libseccomp-devel pkg-config git golang
 ```
 
 ```bash
